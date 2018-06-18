@@ -3,6 +3,7 @@ package com.santa.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
@@ -12,6 +13,7 @@ import java.util.Map;
 import java.util.Properties;
 
 @Configuration
+@EnableJpaRepositories("com.santa.repository")
 public class AppConfig {
     private static final String TRANSPORT_PROTOCOL_KEY = "mail.transport.protocol";
     private static final String TRANSPORT_PROTOCOL_VALUE = "smtp";
