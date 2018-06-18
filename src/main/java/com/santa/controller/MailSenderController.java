@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/mail")
 public class MailSenderController {
 
+    private static String MAIL = "yaroslavakalashnik@gmail.com";
+
     @Autowired
     private MailSenderService mailSenderService;
 
     @GetMapping
     @RequestMapping("/send")
     public void send() {
-        mailSenderService.sendSimpleMessage();
+        mailSenderService.sendSimpleMessage(MAIL);
     }
 }
